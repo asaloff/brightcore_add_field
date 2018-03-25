@@ -14,9 +14,23 @@ body {
   color: #373f47;
 }
 
-
 h5.field-heading {
   font-size: 1.2em;
   font-weight: 600;
   margin: 20px 0 10px 0;
+}
+
+h6.field-heading {
+  font-weight: 600;
+  font-size: 1em;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.small-info-text {
+  font-size: 10px;
+  color: $dark-teal;
+  letter-spacing: .5px;
+  margin-bottom: 5px;
+  font-weight: 600;
 }

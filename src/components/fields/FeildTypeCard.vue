@@ -7,9 +7,9 @@
       <i :class="`fa ${type.icon}`"></i>
       {{type.name}}
     </h4>
-    <h6 class="extra-small-heading">Definition</h6>
+    <h6 class="small-info-text">Definition</h6>
     <p>{{type.definition}}</p>
-    <h6 class="extra-small-heading">Default Display</h6>
+    <h6 class="small-info-text">Default Display</h6>
     <p>{{type.display}}</p>
   </div>
 </template>
@@ -38,7 +38,7 @@
     border-radius: 5px;
     background-color: $white;
     padding-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     cursor: pointer;
 
     h4 {
@@ -49,13 +49,6 @@
       i {
         color: $dark-teal;
       }
-    }
-
-    .extra-small-heading {
-      font-size: 10px;
-      color: $dark-teal;
-      letter-spacing: .5px;
-      margin-bottom: 5px;
     }
 
     p {
