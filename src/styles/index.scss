@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600');
+
+$dark-teal: #004b56;
+$main-teal: #008198;
+$white: #fff;
+$main-background: #f8fbfb;
+$darker-background: #ecf5f6;
+$border-color: #cde2e4;
+$border-style: 2px solid $border-color;
+
+body {
+  background-color: $main-background;
+  font-family: 'Open Sans', sans-serif;
+  color: #373f47;
+}
+
+
+h5.field-heading {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+}

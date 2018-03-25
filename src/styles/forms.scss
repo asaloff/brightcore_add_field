@@ -1,0 +1,16 @@
+@import './index.scss';
+
+label {
+  font-size: .8em;
+}
+
+input {
+  border: $border-style !important;
+  height: 30px;
+  font-size: .3em;
+}
+
+input:focus {
+  box-shadow: none !important;
+  outline: 0 none;
+}
