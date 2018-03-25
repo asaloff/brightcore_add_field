@@ -30,7 +30,19 @@ h6.field-heading {
 .small-info-text {
   font-size: 10px;
   color: $dark-teal;
-  letter-spacing: .5px;
   margin-bottom: 5px;
   font-weight: 600;
+}
+
+.badge {
+  border: $border-style;
+  border-radius: 5px;
+  background-color: $darker-background;
+  padding: 5px;
+  margin: 0 5px 5px 0;
+
+  .close {
+    font-size: 1.1em;
+    margin-left: 5px;
+  }
 }

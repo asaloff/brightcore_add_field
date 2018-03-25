@@ -1,12 +1,15 @@
 <template>
   <div class="container-fluid">
     <h1>{{title}} - Add Field</h1>
-    <div class="add-field col-12" :style="'height: ' + height">
-      <div class="add-field-row row">
-        <FieldTypes />
-        <FieldDetails />
+    <form @submit.prevent="onSubmit">
+      <div class="add-field col-12" :style="'height: ' + height">
+        <div class="add-field-row row">
+          <FieldTypes />
+          <FieldDetails />
+        </div>
       </div>
-    </div>
+      <button type="submit">Submit</button>
+    </form>
   </div>
 </template>
 

@@ -5,27 +5,11 @@ export const mutations = {
     state.addField.selectedField = type.name;
   },
 
-  [types.SET_ADD_FIELD_DISPLAY_LABEL] (state, value) {
-    state.addField.form.displayLabel = value;
+  [types.ADD_SELECT_OPTION] (state, value) {
+    state.addField.form.selectOptions.push(value);
   },
 
-  [types.CLEAR_ADD_FIELD_DISPLAY_LABEL] (state) {
-    state.addField.form.displayLabel = '';
-  },
-
-  [types.SET_ADD_FIELD_REFERENCE_NAME] (state, value) {
-    state.addField.form.reference = value;
-  },
-
-  [types.CLEAR_ADD_FIELD_REFERENCE_NAME] (state) {
-    state.addField.form.reference = '';
-  },
-
-  [types.SET_ADD_FIELD_DEFAULT_VALUE] (state, value) {
-    state.addField.form.defaultValue = value;
-  },
-
-  [types.CLEAR_ADD_FIELD_DEFAULT_VALUE] (state) {
-    state.addField.form.defaultValue = '';
+  [types.REMOVE_SELECT_OPTION] (state, index) {
+    state.addField.form.selectOptions.splice(index, 1);
   }
 };

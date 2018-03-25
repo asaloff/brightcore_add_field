@@ -12,10 +12,7 @@ const state = {
     fieldTypes,
     selectedField: null,
     form: {
-      displayLabel: '',
-      reference: '',
-      defaultValue: '',
-      tagGroup: null
+      selectOptions: []
     }
   }
 };

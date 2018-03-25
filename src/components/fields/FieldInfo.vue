@@ -1,50 +1,57 @@
 <template>
-  <div class="field-info col-8">
-    <div class="field-info col-12">
+    <div class="field-info col-8">
+      <div class="field-info col-12">
 
-      <div class="row">
-        <div class="col-6">
-          <div class="form-group">
-            <label>Display Label</label>
-            <input type="text" class="form-control" v-model="label" @blur="setLabelAndReference()">
-            <span class="small-info-text">For display purposes, spaces allowed</span>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Display Label</label>
+              <input type="text" name="display-label" class="form-control" v-model="label" @blur="setReference()">
+              <span class="small-info-text">For display purposes, spaces allowed</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label>Reference Name</label>
+              <input type="text" name="reference" class="form-control" v-model="reference">
+              <span class="small-info-text">
+                Used to reference in calculations,
+                <span :class="validateReference()">no spaces allowed.</span>
+              </span>
+            </div>
           </div>
         </div>
-        <div class="col-6">
-          <div class="form-group">
-            <label>Reference Name</label>
-            <input type="text" class="form-control" v-model="reference" @blur="setReference()">
-            <span class="small-info-text">
-              Used to reference in calculations,
-              <span :class="validateReference()">no spaces allowed.</span>
-            </span>
+
+        <div class="row">
+          <AddOptionsInput />
+          <DefaultValueInput />
+        </div>
+
+        <SelectOptions v-show="$store.state.addField.selectedField === 'Select'"/>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label>Custom Validation</label>
+              <input type="text"name="custom-validation" class="form-control" >
+            </div>
           </div>
         </div>
-      </div>
 
-      <DefaultValueInput />
-
-      <div class="row">
-        <div class="col-6">
-          <div class="form-group">
-            <label>Custom Validation</label>
-            <input type="text" class="form-control" >
-          </div>
+        <div class="row">
+          <Tags />
         </div>
-      </div>
 
-      <div class="row">
-        <Tags />
       </div>
-
     </div>
-  </div>
 </template>
 
 <script>
-  import { mapActions } from 'vuex';
+  import AddOptionsInput from './AddOptionsInput';
   import DefaultValueInput from './DefaultValueInput';
+  import SelectOptions from './SelectOptions';
   import Tags from './Tags';
+  import serialize from 'form-serialize';
 
   export default {
     data() {
@@ -54,25 +61,21 @@
       };
     },
     methods: {
-      setLabelAndReference() {
-        this.reference = this.label.trim().toLowerCase().split(' ').join('-');
-        this.setDisplayLabel(this.label);
-        this.setReferenceName(this.reference);
+      onSubmit(e) {
+        const form = serialize(e.target, { hash: true });
+        debugger;
       },
       setReference() {
         this.reference = this.label.trim().toLowerCase().split(' ').join('-');
-        this.setReferenceName(this.reference);
       },
       validateReference() {
         return this.reference.includes(' ') ? 'red' : '';
-      },
-      ...mapActions([
-        'setDisplayLabel',
-        'setReferenceName'
-      ])
+      }
     },
     components: {
+      AddOptionsInput,
       DefaultValueInput,
+      SelectOptions,
       Tags
     }
   };
@@ -81,8 +84,9 @@
 <style>
   @import '../../styles/index.scss';
 
-  .field-info {
+  .field-info.col-8 {
     padding-left: 0;
+    overflow-y: scroll;
   }
 
   .red {
