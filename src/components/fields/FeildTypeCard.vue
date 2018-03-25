@@ -1,7 +1,7 @@
 <template>
   <div
     :class="`field-type-card col-12 ${checkSelected($store.state.addField.selectedField)}`"
-    @click="setSelectedFieldType(type)"
+    @click="switchTypes()"
   >
     <h4 class="type-card-heading">
       <i :class="`fa ${type.icon}`"></i>
@@ -23,8 +23,13 @@
       checkSelected(stateSelected) {
         return this.type.name === stateSelected ? 'selected' : '';
       },
+      switchTypes() {
+        this.setSelectedFieldType(this.type);
+        this.clearDefaultFieldValue();
+      },
       ...mapActions([
-        'setSelectedFieldType'
+        'setSelectedFieldType',
+        'clearDefaultFieldValue'
       ])
     }
   };

@@ -6,30 +6,23 @@
         <div class="col-6">
           <div class="form-group">
             <label>Display Label</label>
-            <input type="text" class="form-control" v-model="label" @blur="setReference()">
+            <input type="text" class="form-control" v-model="label" @blur="setLabelAndReference()">
             <span class="small-info-text">For display purposes, spaces allowed</span>
           </div>
         </div>
         <div class="col-6">
           <div class="form-group">
             <label>Reference Name</label>
-            <input type="text" class="form-control" v-model="reference">
+            <input type="text" class="form-control" v-model="reference" @blur="setReference()">
             <span class="small-info-text">
               Used to reference in calculations,
-              <span :class="referenceError()">no spaces allowed.</span>
+              <span :class="validateReference()">no spaces allowed.</span>
             </span>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-6">
-          <div class="form-group">
-            <label>Default Value</label>
-            <input type="text" class="form-control" >
-          </div>
-        </div>
-      </div>
+      <DefaultValueInput />
 
       <div class="row">
         <div class="col-6">
@@ -49,6 +42,8 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
+  import DefaultValueInput from './DefaultValueInput';
   import Tags from './Tags';
 
   export default {
@@ -59,14 +54,25 @@
       };
     },
     methods: {
+      setLabelAndReference() {
+        this.reference = this.label.trim().toLowerCase().split(' ').join('-');
+        this.setDisplayLabel(this.label);
+        this.setReferenceName(this.reference);
+      },
       setReference() {
         this.reference = this.label.trim().toLowerCase().split(' ').join('-');
+        this.setReferenceName(this.reference);
       },
-      referenceError() {
+      validateReference() {
         return this.reference.includes(' ') ? 'red' : '';
-      }
+      },
+      ...mapActions([
+        'setDisplayLabel',
+        'setReferenceName'
+      ])
     },
     components: {
+      DefaultValueInput,
       Tags
     }
   };
@@ -74,7 +80,6 @@
 
 <style>
   @import '../../styles/index.scss';
-  @import '../../styles/forms.scss';
 
   .field-info {
     padding-left: 0;

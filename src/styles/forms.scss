@@ -4,13 +4,13 @@ label {
   font-size: .8em;
 }
 
-input {
+input, select {
   border: $border-style !important;
-  height: 30px;
+  height: 30px !important;
   font-size: .3em;
-}
 
-input:focus {
-  box-shadow: none !important;
-  outline: 0 none;
+  &:focus {
+    box-shadow: none !important;
+    outline: 0 none;
+  }
 }

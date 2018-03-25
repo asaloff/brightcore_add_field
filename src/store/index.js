@@ -10,7 +10,13 @@ Vue.use(Vuex);
 const state = {
   addField: {
     fieldTypes,
-    selectedField: null
+    selectedField: null,
+    form: {
+      displayLabel: '',
+      reference: '',
+      defaultValue: '',
+      tagGroup: null
+    }
   }
 };
 
