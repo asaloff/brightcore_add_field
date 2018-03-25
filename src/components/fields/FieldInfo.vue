@@ -1,5 +1,5 @@
 <template>
-    <div class="field-info col-8">
+    <div class="field-info col-8 scroller">
       <div class="field-info col-12">
 
         <div class="row">
@@ -86,7 +86,7 @@
 
   .field-info.col-8 {
     padding-left: 0;
-    overflow-y: scroll;
+    overflow: auto;
   }
 
   .red {

@@ -1,5 +1,5 @@
 <template>
-  <div class="field-types col-3">
+  <div class="field-types col-3 scroller">
     <h5 class="field-heading">Field Types</h5>
     <div class="filter-types form-group">
       <label>Filter Types</label>
@@ -43,7 +43,7 @@
     height: 100% !important;
     background-color: $darker-background;
     border-right: $border-style;
-    overflow: scroll;
+    overflow: auto;
 
     .filter-types {
       margin-bottom: 20px;
