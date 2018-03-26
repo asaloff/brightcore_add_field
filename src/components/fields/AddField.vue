@@ -8,7 +8,19 @@
           <FieldDetails />
         </div>
       </div>
-      <button type="submit">Submit</button>
+      <div class="add-field-buttons col-12">
+        <div class="row justify-content-between">
+          <div class="col-4 btn-col">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </div>
+          <div class="col-4 btn-col">
+            <div class="row justify-content-end">
+              <button class="btn btn-default btn-after">Cancel Changes</button>
+              <button class="btn btn-danger">Delete Input</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
   </div>
 </template>
@@ -41,6 +53,7 @@
 
 <style lang="scss">
   @import '../../styles/index.scss';
+  @import '../../styles/buttons.scss';
 
   .container-fluid {
     padding: 0 30px;
@@ -58,9 +71,14 @@
     border-radius: 5px;
     background-color: $white;
     min-height: 440px;
+    margin-bottom: 15px;
   }
 
   .add-field-row {
     height: 100%;
+  }
+
+  .add-field-buttons {
+    margin-bottom: 15px;
   }
 </style>

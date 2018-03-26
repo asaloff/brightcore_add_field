@@ -1,0 +1,48 @@
+@import './index.scss';
+
+.btn {
+  width: 125px;
+  border-radius: 2px;
+  font-weight: 100;
+  font-size: 12px;
+  cursor: pointer;
+
+  &:hover, &:focus, &:target, &:active {
+    box-shadow: none;
+  }
+}
+
+.btn-primary {
+  background-color: $main-teal;
+  border: none;
+
+  &:hover, &:focus, &:target, &:active {
+    background-color: $hover-teal;
+  }
+}
+
+.btn-danger {
+  background-color: $error-red;
+  border: none;
+
+  &:hover, &:focus, &:target, &:active {
+    background-color: $hover-red;
+  }
+}
+
+.btn-default {
+  background-color: #fff;
+  border: $border-style;
+
+  &:hover, &:focus, &:target, &:active {
+    background-color: $darker-background;
+  }
+}
+
+.btn-col {
+  padding-left: 0;
+}
+
+.btn-after {
+  margin-right: 20px;
+}

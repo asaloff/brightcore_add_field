@@ -39,7 +39,7 @@
   @import '../../styles/index.scss';
 
   .field-types {
-    height: 100% !important;
+    height: 100%;
     background-color: $darker-background;
     border-right: $border-style;
     overflow: auto;
