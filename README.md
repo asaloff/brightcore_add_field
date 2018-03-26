@@ -1,10 +1,10 @@
-# BrightCore - Add Field Page
+# BriteCore - Add Field Page
 
-> An interview project for BrightCore
+> An interview project for BriteCore
 
-Demo online at [https://asaloff.github.io/brightcore_add_field/](https://asaloff.github.io/brightcore_add_field/)
+Demo online at [https://asaloff.github.io/britecore_add_field/](https://asaloff.github.io/britecore_add_field/)
 
-![Brightcore Add Field](https://s3.amazonaws.com/misc-8691742/brighcore_gif.gif)
+![Britecore Add Field](https://s3.amazonaws.com/misc-8691742/brighcore_gif.gif)
 
 ### Main Features:
 
