@@ -16,4 +16,4 @@ Demo online at [https://asaloff.github.io/britecore_add_field/](https://asaloff.
 - User can select a tag group to see the tags in the group
 - User can add field goups and select a field group for the new field
 
-Questions or comment? [Email me](aaronsaloff@gmail.com)
+Questions or comment? [Email me](mailto:aaronsaloff@gmail.com)
