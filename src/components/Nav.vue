@@ -1,7 +1,5 @@
 <template>
-  <div class="nav">
-    <img src="../../public/images/brightcore_nav.jpg" alt="BrightCore Navigation">
-  </div>
+  <div class="nav"></div>
 </template>
 
 <style lang="scss">
@@ -9,5 +7,9 @@
 
   .nav {
     background-color: $dark-teal;
+    background-image: url("https://s3.amazonaws.com/misc-8691742/brightcore_nav.jpg");
+    background-repeat: no-repeat;
+    background-position: left;
+    height: 40px;
   }
 </style>
