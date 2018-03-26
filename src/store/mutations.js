@@ -11,5 +11,9 @@ export const mutations = {
 
   [types.REMOVE_SELECT_OPTION] (state, index) {
     state.addField.form.selectOptions.splice(index, 1);
+  },
+
+  [types.SET_TAG_GROUP] (state, group) {
+    state.addField.selectedTagGroup = group;
   }
 };

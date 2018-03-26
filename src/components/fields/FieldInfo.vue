@@ -1,7 +1,6 @@
 <template>
     <div class="field-info col-8 scroller">
       <div class="field-info col-12">
-
         <div class="row">
           <div class="col-6">
             <div class="form-group">
@@ -16,32 +15,28 @@
               <input type="text" name="reference" class="form-control" v-model="reference">
               <span class="small-info-text">
                 Used to reference in calculations,
-                <span :class="validateReference()">no spaces allowed.</span>
+                <span :class="validateReference()">no spaces allowed</span>
               </span>
             </div>
           </div>
         </div>
-
         <div class="row">
           <AddOptionsInput />
           <DefaultValueInput />
         </div>
-
         <SelectOptions v-show="$store.state.addField.selectedField === 'Select'"/>
-
         <div class="row">
           <div class="col-6">
             <div class="form-group">
               <label>Custom Validation</label>
               <input type="text"name="custom-validation" class="form-control" >
+              <span class="small-info-text">Any regex pattern can be used for custom validation</span>
             </div>
           </div>
         </div>
-
         <div class="row">
           <Tags />
         </div>
-
       </div>
     </div>
 </template>
@@ -51,7 +46,6 @@
   import DefaultValueInput from './DefaultValueInput';
   import SelectOptions from './SelectOptions';
   import Tags from './Tags';
-  import serialize from 'form-serialize';
 
   export default {
     data() {
@@ -61,10 +55,6 @@
       };
     },
     methods: {
-      onSubmit(e) {
-        const form = serialize(e.target, { hash: true });
-        debugger;
-      },
       setReference() {
         this.reference = this.label.trim().toLowerCase().split(' ').join('-');
       },

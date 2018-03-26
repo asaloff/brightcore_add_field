@@ -16,6 +16,8 @@
 <script>
   import FieldTypes from './FieldTypes';
   import FieldDetails from './FieldDetails';
+  import serialize from 'form-serialize';
+
 
   export default {
     data() {
@@ -23,6 +25,12 @@
         title: "Commercial Property",
         height: `${window.innerHeight - 180}px`
       };
+    },
+    methods: {
+      onSubmit(e) {
+        const form = serialize(e.target, { hash: true });
+        debugger;
+      }
     },
     components: {
       FieldTypes,

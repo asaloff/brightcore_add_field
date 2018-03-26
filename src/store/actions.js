@@ -11,3 +11,7 @@ export const addSelectOption = ({commit}, value) => {
 export const removeSelectOption = ({commit}, index) => {
   commit(types.REMOVE_SELECT_OPTION, index);
 };
+
+export const setTagGroup = ({commit}, group) => {
+  commit(types.SET_TAG_GROUP, group);
+};
