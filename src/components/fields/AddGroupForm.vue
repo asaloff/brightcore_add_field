@@ -25,7 +25,7 @@
       ]),
       addGroupShown(store) {
         const { addField } = store.state;
-        return !!addField.selectedField && addField.showAddGroup;
+        return addField.selectedField && addField.showAddGroup;
       },
       addGroup() {
         if (!this.input) return;

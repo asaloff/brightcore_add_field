@@ -1,32 +1,34 @@
 <template>
-  <div class="tags col-12">
-    <h6 class="field-heading">Tags</h6>
-    <div class="row">
-      <div class="col-6">
-        <label class="tag-label">Tag Group</label>
-        <span
-          v-for="tagGroup in $store.state.addField.tagGroups"
-          @click="setTagGroup(tagGroup)"
-          :class="`badge hover-badge ${checkSelected(tagGroup, $store.state)}`"
-        >
-          {{tagGroup.name}}
-        </span>
-      </div>
-      <div class="col-6">
-        <label class="tag-label">Tags</label>
-        <span
-          class="small-info-text"
-          v-show="!$store.state.addField.selectedTagGroup"
-        >
-          Select a tag group to see individual tags
-        </span>
-        <div v-if="$store.state.addField.selectedTagGroup">
+  <div class="row">
+    <div class="tags col-12">
+      <h6 class="field-heading">Tags</h6>
+      <div class="row">
+        <div class="col-6">
+          <label class="tag-label">Tag Group</label>
           <span
-            v-for="tag in $store.state.addField.selectedTagGroup.tags"
-            class="badge"
+            v-for="tagGroup in $store.state.addField.tagGroups"
+            @click="setTagGroup(tagGroup)"
+            :class="`badge hover-badge ${checkSelected(tagGroup, $store.state)}`"
           >
-            {{tag}}
+            {{tagGroup.name}}
           </span>
+        </div>
+        <div class="col-6">
+          <label class="tag-label">Tags</label>
+          <span
+            class="small-info-text"
+            v-show="!$store.state.addField.selectedTagGroup"
+          >
+            Select a tag group to see individual tags
+          </span>
+          <div v-if="$store.state.addField.selectedTagGroup">
+            <span
+              v-for="tag in $store.state.addField.selectedTagGroup.tags"
+              class="badge"
+            >
+              {{tag}}
+            </span>
+          </div>
         </div>
       </div>
     </div>

@@ -28,8 +28,3 @@
     }
   };
 </script>
-
-<style>
-  @import '../../styles/index.scss';
-  @import '../../styles/card.scss';
-</style>

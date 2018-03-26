@@ -19,9 +19,7 @@ const state = {
       selectOptions: []
     },
     fieldGroups: [
-      { name: 'Rental Vehicle Coverage Package', fields: [ { name: 'foo' }, { name: 'bar' }, { name: 'baz' } ] },
-      { name: 'Rental Vehicle Coverage', fields: [ { name: 'foo' }, { name: 'bar' }, { name: 'baz' } ] },
-      { name: 'Rental Vehicle Package', fields: [ { name: 'foo' }, { name: 'bar' }, { name: 'baz' } ] }
+      { name: 'Rental Vehicle Coverage Package', fields: [ { name: 'foo' }, { name: 'bar' }, { name: 'baz' } ] }
     ],
     showAddGroup: false
   }

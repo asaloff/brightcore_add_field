@@ -2,10 +2,7 @@
   <div class="field-groups col-4 scroller">
     <div class="add-group-head">
       <h5 class="field-heading">Field Groups</h5>
-      <span
-        @click="toggleAddFieldGroup()"
-        class="add-group-button btn btn-primary"
-      >
+      <span @click="toggleAddFieldGroup()" class="add-group-button btn btn-primary">
         {{toggleSymbol($store)}}
       </span>
     </div>
@@ -53,13 +50,12 @@
       font-size: 1em;
       margin-top: 15px;
       margin-bottom: 0;
-
     }
-  }
 
-  .add-group-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    .add-group-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
   }
 </style>
