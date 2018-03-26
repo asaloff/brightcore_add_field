@@ -16,7 +16,10 @@ const state = {
     selectedTagGroup: null,
     form: {
       selectOptions: []
-    }
+    },
+    fieldGroups: [
+      { name: 'Rental Vehicle Coverage Package', fields: [ { name: 'foo' }, { name: 'bar' }, { name: 'baz' } ] }
+    ]
   }
 };
 

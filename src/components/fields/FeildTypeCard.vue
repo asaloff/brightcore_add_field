@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`field-type-card col-12 ${checkSelected($store.state.addField.selectedField)}`"
+    :class="`field-card col-12 ${checkSelected($store.state.addField.selectedField)}`"
     @click="setSelectedFieldType(type)"
   >
     <h4 class="type-card-heading">
@@ -32,33 +32,5 @@
 
 <style lang="scss">
   @import '../../styles/index.scss';
-
-  .field-type-card {
-    border: $border-style;
-    border-radius: 5px;
-    background-color: $white;
-    padding-top: 15px;
-    margin-bottom: 10px;
-    cursor: pointer;
-
-    h4 {
-      font-weight: 600;
-      font-size: 1.1em;
-      margin-bottom: 15px;
-
-      i {
-        color: $dark-teal;
-      }
-    }
-
-    p {
-      font-size: 12px;
-    }
-
-    &:hover, &.selected {
-      background-color: $main-teal;
-      color: #fff;
-      h4 > i, h6 { color: #fff; }
-    }
-  }
+  @import '../../styles/card.scss';
 </style>

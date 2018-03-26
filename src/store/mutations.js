@@ -1,4 +1,4 @@
-import * as types from './mutation-types';
+import * as types from './mutationTypes';
 
 export const mutations = {
   [types.SET_ADD_FIELD_SELECTED_TYPE] (state, type) {

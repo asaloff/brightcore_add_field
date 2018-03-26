@@ -1,0 +1,48 @@
+.field-card {
+  border: $border-style;
+  border-radius: 5px;
+  background-color: $white;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  h4 {
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+
+    i {
+      color: $dark-teal;
+    }
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  &:hover, &.selected {
+    background-color: $main-teal;
+    color: #fff;
+
+    h4 > i, h6 {
+      color: #fff;
+    }
+  }
+}
+
+.group-card {
+  padding: 7px;
+  margin: 10px 0 0 0;
+
+  span.group-name {
+    display: block;
+    font-weight: 600;
+    font-size: .8em;
+  }
+
+  &:hover {
+    span.small-info-text {
+      color: $white;
+    }
+  }
+}
