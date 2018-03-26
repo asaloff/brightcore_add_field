@@ -37,7 +37,6 @@
 
 <style lang="scss">
   @import '../../styles/index.scss';
-  @import '../../styles/forms.scss';
 
   .field-types {
     height: 100% !important;

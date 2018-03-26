@@ -13,4 +13,12 @@ input, select {
     box-shadow: none !important;
     outline: 0 none;
   }
+
+  &.invalid {
+    border-color: $error-red !important;
+  }
+}
+
+span.invalid {
+  color: $error-red;
 }

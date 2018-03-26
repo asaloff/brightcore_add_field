@@ -12,7 +12,12 @@
           <div class="col-6">
             <div class="form-group">
               <label>Reference Name</label>
-              <input type="text" name="reference" class="form-control" v-model="reference">
+              <input
+                type="text"
+                name="reference"
+                :class="`form-control ${validateReference()}`"
+                v-model="reference"
+              >
               <span class="small-info-text">
                 Used to reference in calculations,
                 <span :class="validateReference()">no spaces allowed</span>
@@ -29,8 +34,15 @@
           <div class="col-6">
             <div class="form-group">
               <label>Custom Validation</label>
-              <input type="text"name="custom-validation" class="form-control" >
-              <span class="small-info-text">Any regex pattern can be used for custom validation</span>
+              <input
+                v-model="customValidation"
+                type="text"
+                name="custom-validation"
+                :class="`form-control ${validateRegex()}`"
+              >
+              <span class="small-info-text">
+                Any <span :class="validateRegex()">regex pattern</span> can be used for custom validation
+              </span>
             </div>
           </div>
         </div>
@@ -51,7 +63,8 @@
     data() {
       return {
         label: '',
-        reference: ''
+        reference: '',
+        customValidation: ''
       };
     },
     methods: {
@@ -59,7 +72,17 @@
         this.reference = this.label.trim().toLowerCase().split(' ').join('-');
       },
       validateReference() {
-        return this.reference.includes(' ') ? 'red' : '';
+        return this.reference.includes(' ') ? 'invalid' : '';
+      },
+      validateRegex() {
+        if (this.customValidation === '') return;
+        if (!this.customValidation.startsWith('/')) return 'invalid';
+        const segs = this.customValidation.slice(1).split('/');
+        try {
+          new RegExp(segs[0], segs[1]);
+        } catch(e) {
+          return 'invalid';
+        }
       }
     },
     components: {
@@ -71,15 +94,11 @@
   };
 </script>
 
-<style>
+<style lang='scss'>
   @import '../../styles/index.scss';
 
   .field-info.col-8 {
     padding-left: 0;
     overflow: auto;
-  }
-
-  .red {
-    color: red;
   }
 </style>

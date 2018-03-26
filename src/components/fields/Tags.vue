@@ -20,12 +20,14 @@
         >
           Select a tag group to see individual tags
         </span>
-        <span
-          v-for="tag in $store.state.addField.selectedTagGroup.tags"
-          class="badge"
-        >
-          {{tag}}
-        </span>
+        <div v-if="$store.state.addField.selectedTagGroup">
+          <span
+            v-for="tag in $store.state.addField.selectedTagGroup.tags"
+            class="badge"
+          >
+            {{tag}}
+          </span>
+        </div>
       </div>
     </div>
   </div>
