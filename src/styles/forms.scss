@@ -4,7 +4,7 @@ label {
   font-size: .8em;
 }
 
-input, select, .form-control {
+input, select, .form-control, select.form-control:not([size]):not([multiple]) {
   border: $border-style;
   height: 30px;
 

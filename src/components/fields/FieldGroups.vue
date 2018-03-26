@@ -2,7 +2,12 @@
   <div class="field-groups col-4 scroller">
     <div class="add-group-head">
       <h5 class="field-heading">Field Groups</h5>
-      <button class="add-group-button btn btn-primary">&plus;</button>
+      <span
+        @click="toggleAddFieldGroup()"
+        class="add-group-button btn btn-primary"
+      >
+        {{toggleSymbol($store)}}
+      </span>
     </div>
     <span class="small-info-text">Choose a group for this input</span>
     <FieldGroupCard
@@ -14,9 +19,19 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
   import FieldGroupCard from './FieldGroupCard';
+  import he from 'he';
 
   export default {
+    methods: {
+      ...mapActions([
+        'toggleAddFieldGroup'
+      ]),
+      toggleSymbol(store) {
+        return store.state.addField.showAddGroup ? he.decode('&times;') : he.decode('&plus;');
+      }
+    },
     components: {
       FieldGroupCard
     }
@@ -39,10 +54,6 @@
       margin-top: 15px;
       margin-bottom: 0;
 
-    }
-
-    .btn {
-      float: right;
     }
   }
 

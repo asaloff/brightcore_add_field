@@ -7,7 +7,7 @@
         <span
           v-for="tagGroup in $store.state.addField.tagGroups"
           @click="setTagGroup(tagGroup)"
-          :class="`badge hover-badge ${checkSelected(tagGroup, $store.state.addField.selectedTagGroup)}`"
+          :class="`badge hover-badge ${checkSelected(tagGroup, $store.state)}`"
         >
           {{tagGroup.name}}
         </span>
@@ -38,8 +38,9 @@
 
   export default {
     methods: {
-      checkSelected(group, stateSelected) {
-        return stateSelected && stateSelected.name === group.name ? 'selected' : '';
+      checkSelected(group, state) {
+        const selected = state.addField.selectedTagGroup;
+        return selected && selected.name === group.name ? 'selected' : '';
       },
       ...mapActions([ 'setTagGroup' ])
     }

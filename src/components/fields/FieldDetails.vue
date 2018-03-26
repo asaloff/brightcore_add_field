@@ -1,18 +1,22 @@
 <template>
   <div class="field-details col-9">
-    <h5 class="field-heading" v-show="!!$store.state.addField.selectedField">
-      Field Details
-    </h5>
-    <h5 class="field-heading" v-show="!$store.state.addField.selectedField">
-      Please select a field type...
-    </h5>
-
-    <div class="selected-type">
-      <small v-show="!!$store.state.addField.selectedField">
-        Selected Type: <strong>{{$store.state.addField.selectedField}}</strong>
-      </small>
+    <div class="field-details-head">
+      <h5 class="field-heading" v-if="!$store.state.addField.selectedField">
+        Please select a field type...
+      </h5>
+      <div>
+        <h5 class="field-heading" v-if="!!$store.state.addField.selectedField">
+          Field Details
+        </h5>
+        <div class="selected-type">
+          <small v-if="!!$store.state.addField.selectedField">
+            Selected Type: <strong>{{$store.state.addField.selectedField}}</strong>
+          </small>
+        </div>
+      </div>
+      <AddGroupForm />
     </div>
-    <div class="col-12 field-details-content" v-show="!!$store.state.addField.selectedField">
+    <div class="col-12 field-details-content" v-if="!!$store.state.addField.selectedField">
       <div class="row">
         <FieldInfo />
         <FieldGroups />
@@ -22,11 +26,13 @@
 </template>
 
 <script>
+  import AddGroupForm from './AddGroupForm';
   import FieldInfo from './FieldInfo';
   import FieldGroups from './FieldGroups';
 
   export default {
     components: {
+      AddGroupForm,
       FieldInfo,
       FieldGroups
     }
@@ -38,6 +44,11 @@
   @import '../../styles/forms.scss';
 
   .field-details {
+    .field-details-head {
+      display: flex;
+      justify-content: space-between;
+    }
+
     h5.field-heading {
       margin-bottom: 0;
     }
