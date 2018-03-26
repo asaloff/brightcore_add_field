@@ -4,6 +4,8 @@
 
 Demo online at [https://asaloff.github.io/brightcore_add_field/](https://asaloff.github.io/brightcore_add_field/)
 
+![Brightcore Add Field](https://s3.amazonaws.com/misc-8691742/brighcore_gif.gif)
+
 ### Main Features:
 
 - User can filter/select a field type - based on the type the proper fields will display in the form
